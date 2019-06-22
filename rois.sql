@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 18, 2019 at 04:21 PM
+-- Generation Time: Jun 22, 2019 at 05:21 PM
 -- Server version: 5.7.26-0ubuntu0.16.04.1
 -- PHP Version: 7.0.33-6+ubuntu16.04.1+deb.sury.org+3
 
@@ -135,15 +135,8 @@ CREATE TABLE `pakar` (
 --
 
 INSERT INTO `pakar` (`id`, `a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `penyakit`, `rekom`) VALUES
-(13, 'panas pada dewasa', 'sesak saat istirahat', 'nyeri perut berat', 'foto paru positif', '', '', '', '', '', '', 'pneumonia', ''),
 (14, 'panas pada dewasa', 'sesak saat istirahat', 'krepitasi dan napas bronkial', 'dahak kuning atau hijau', '', '', '', '', '', '', 'bronkitis akut', ''),
-(15, 'panas pada dewasa', 'sesak saat istirahat', 'krepitasi dan napas bronkial', 'dahak kuning atau hijau', 'batuk lebih dari 4 minggu atau batuk darah dalam waktu 3 bulan', 'leher kaku', '', '', '', '', 'miningitis', ''),
-(16, 'panas pada dewasa', 'sesak saat istirahat', 'krepitasi dan napas bronkial', 'dahak kuning atau hijau', 'batuk lebih dari 4 minggu atau batuk darah dalam waktu 3 bulan', 'leher kaku', 'nyeri perut atau nyeri pinggang', '', '', '', 'pielonefritis', ''),
-(17, 'panas pada dewasa', 'sesak saat istirahat', 'krepitasi dan napas bronkial', 'dahak kuning atau hijau', 'batuk lebih dari 4 minggu atau batuk darah dalam waktu 3 bulan', 'leher kaku', 'nyeri perut atau nyeri pinggang', 'ada asbes dimana saja', '', '', 'asbes', ''),
-(18, 'panas pada dewasa', 'sesak saat istirahat', 'krepitasi dan napas bronkial', 'dahak kuning atau hijau', 'batuk lebih dari 4 minggu atau batuk darah dalam waktu 3 bulan', 'leher kaku', 'nyeri perut atau nyeri pinggang', 'ada asbes dimana saja', 'diare', '', 'gastroenteritis', ''),
-(19, 'panas pada dewasa', 'sesak saat istirahat', 'krepitasi dan napas bronkial', 'dahak kuning atau hijau', 'batuk lebih dari 4 minggu atau batuk darah dalam waktu 3 bulan', 'leher kaku', 'nyeri perut atau nyeri pinggang', 'ada asbes dimana saja', 'diare', 'bintik merah di kulit', 'malaria', ''),
-(20, 'Kelemahan Badan', 'Panas', 'Anemia Berat', 'Batuk lebih 4 Minggu atau Batuk darah 3 bulan ini', 'Rongsent Paru', '', '', '', '', '', 'TBC Paru', ''),
-(21, 'Kelemahan Badan', 'Panas', 'Anemia Berat', 'Batuk lebih 4 Minggu atau Batuk darah 3 bulan ini', 'Bengkak', 'Kehilangan Berat Badan', 'Sesak pada aktivitas', 'Masalah kebosanan', '', '', 'Stress mental', '');
+(15, 'panas pada dewasa', 'sesak saat istirahat', 'krepitasi dan napas bronkial', 'dahak kuning atau hijau', 'batuk lebih dari 4 minggu atau batuk darah dalam waktu 3 bulan', 'leher kaku', '', '', '', '', 'miningitis', '');
 
 -- --------------------------------------------------------
 
@@ -652,7 +645,9 @@ CREATE TABLE `siswa_baru` (
 --
 
 INSERT INTO `siswa_baru` (`id`, `nama`, `panggilan`, `jk`, `saudara`, `ke`, `dari`, `goldar`, `rhesus`, `hp1`, `hp2`, `pil1`, `pil2`, `pil3`, `jalur1`, `jalur2`, `jurusan`, `riwayat1`, `riwayat2`, `riwayat3`, `ekskul1`, `ekskul2`, `ekskul3`, `ekskul4`, `ekskul5`) VALUES
-('20042019760', 'Chalid Ade Rahman', 'Chalid', 'Laki-Laki', '5', '1', '5', 'A', '+', '085784566522', '088582992342', 'Teknik K3', 'Teknik Permesinan', 'Teknik Pengelasan', 'SBMPTN', '', 'Teknik Kimia', 'Kemala Bhayangkari 10 Porong', 'Negeri 1 Porong', 'Negeri 5 Porong', 'Basket', 'Volley', 'Futsal', 'Bopak Sodor', 'Kelereng');
+('', 'Lina', '', 'Perempuan', '', '', '', '', '', '089999999939', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+('20042019760', 'Chalid Ade Rahman', 'Chalid', 'Laki-Laki', '5', '1', '5', 'A', '+', '085784566522', '088582992342', 'Teknik K3', 'Teknik Permesinan', 'Teknik Pengelasan', 'SBMPTN', '', 'Teknik Kimia', 'Kemala Bhayangkari 10 Porong', 'Negeri 1 Porong', 'Negeri 5 Porong', 'Basket', 'Volley', 'Futsal', 'Bopak Sodor', 'Kelereng'),
+('22062019928', 'Sitrun', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -693,6 +688,7 @@ CREATE TABLE `siswa_baru1` (
 
 INSERT INTO `siswa_baru1` (`id`, `asma`, `tbc`, `hepatitis`, `operasi`, `operasi_text`, `kecelakaan`, `kecelakaan_text`, `opname`, `opname_text`, `maag`, `epilepsi`, `olahraga`, `buah`, `rokok`, `batang`, `tidur`, `waktu1`, `bangun`, `waktu2`, `facebook`, `instagram`, `bpjs`, `faskes`) VALUES
 ('20042019760', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Campak', 'Pernah', 'kecelakaan', 'Pernah', 'opnamae', 'Tidak', '0', '<1x/pekan', 'setiap hari', '0', '5', '21:00', 'WIB', '05:00', 'WIB', '/Chalidade', '/Chalidade', 'Iya', 'aman'),
+('22062019928', 'Tidak', 'Tidak', 'Tidak', 'Tidak', '', 'Pernah', '', 'Pernah', '', 'Tidak', '0', '<1x/pekan', 'setiap hari', '0', '', '', 'WIB', '', 'WIB', '', '', 'Iya', ''),
 ('25042019588', 'Tidak', 'Tidak', 'Tidak', 'Tidak', 'Aman', 'Pernah', 'Aman', 'Pernah', 'Aman', 'Tidak', '0', '<1x/pekan', 'setiap hari', '0', '', '08:00', 'WIB', '20:00', 'WIB', '/Linanurfauziah', '/Linanurfauziah', 'Iya', 'Sehat'),
 ('28042019754', 'Tidak', 'Tidak', 'Tidak', 'Tidak', '', 'Pernah', '', 'Pernah', '', 'Tidak', '0', '<1x/pekan', 'setiap hari', '0', '', '', 'WIB', '', 'WIB', '', '', 'Iya', '');
 
@@ -738,6 +734,7 @@ CREATE TABLE `siswa_baru2` (
 
 INSERT INTO `siswa_baru2` (`id`, `ayah`, `tgl_ayah`, `kerja_ayah`, `riw_ayah`, `darah_ayah`, `ibu`, `tgl_ibu`, `kerja_ibu`, `riw_ibu`, `darah_ibu`, `penghasil`, `saudara1`, `tgl_saudara1`, `gol_saudara1`, `saudara2`, `tgl_saudara2`, `gol_saudara2`, `saudara3`, `tgl_saudara3`, `gol_saudara3`, `saudara4`, `tgl_saudara4`, `gol_saudara4`, `saudara5`, `tgl_saudara5`, `gol_saudara5`) VALUES
 ('20042019760', 'Kaliman', '2019-04-20', 'Bengkel Cat Mobil', 'Tidak ada', 'o', 'Anita Setiawati', '2019-04-20', 'Rumah Tangga', 'Tidak ada', 'AB', 'Rp. 1.500.001 - 3.000.000,-', 'Chindy', '2019-04-20', 'o', 'Chelud', '2019-04-13', 'A', 'Chalid', '2019-04-22', 'B', 'Chyhuy', '2019-04-21', 'C', 'Chichi', '2019-04-08', 'B'),
+('22062019928', '', '', '', '', '', '', '', '', '', '', '< Rp. 1.500.000,-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
 ('25042019588', 'Kaliman', '2019-08-01', 'Bengkel Cat', 'Sehat', 'O', 'Anita Setiawati', '2019-08-10', 'Ibu Rumah Tangga', 'Sehat', 'O', '< Rp. 1.500.000,-', 'Chelud', '2019-08-19', 'O', 'Chalid', '2019-04-25', 'A', 'Chindy', '2019-04-08', 'O', 'Chicka', '2019-04-17', 'AB', 'Chulyn', '2019-04-22', 'B'),
 ('28042019754', '', '', '', '', '', '', '', '', '', '', '< Rp. 1.500.000,-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
 
@@ -801,6 +798,7 @@ CREATE TABLE `siswa_baru3` (
 INSERT INTO `siswa_baru3` (`id`, `bb`, `tb`, `bmi`, `tkd`, `nadi_awal`, `bw`, `st1`, `st2`, `sp02`, `visus`, `umum`, `mata`, `ket_mata`, `hidung`, `ket_hidung`, `mulut_1`, `mulut_2`, `ket_paring`, `ket_tonsi`, `telinga`, `k_telinga`, `tiroid`, `k_tiroid`, `paru`, `ket_paru`, `wh`, `murmur`, `ket_mur`, `galop`, `hepar`, `ket_hepar`, `lien`, `ket_lien`, `geni`, `ket_geni`, `haemorhoid`, `fistul`, `abses`, `eks_tangan`, `ket_tangan`, `kk_refleks`, `kk_ederma`, `ket_kaki`) VALUES
 ('20042019760', '50', '160', '0.001953125', '10', '5', '-', '10', '10', '10', 'OD', 'Normal', '-', 'normal', '-', 'normal', 'Paringitis -', 'Tonsilitis -', 'normal', 'normal', '-', 'normal', '-', 'normal', '+', 'normal', '-', '-', 'normal', '+', 'Teraba', 'normal', 'Tidak Teraba', 'normal', '+', 'normal', '+', '-', '+', 'Normal', 'normal', 'Normal', 'Normal', 'Normal'),
 ('2004201992', '50', '160', '0.001953125', '10', '5', '-', '10', '10', '10', 'OD', 'Normal', '-', 'normal', '-', 'normal', 'Paringitis -', 'Tonsilitis -', 'normal', 'normal', '-', 'normal', '-', 'normal', '+', 'normal', '-', '-', 'normal', '+', 'Teraba', 'normal', 'Tidak Teraba', 'normal', '+', 'normal', '+', '-', '+', 'Normal', 'normal', 'Normal', 'Normal', 'normal'),
+('22062019928', '', '', 'NAN', '', '', '', '', '', '', '', 'Normal', '-', '', '-', '', 'Paringitis -', 'Tonsilitis -', '', '', '-', '', '-', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'Normal', '', 'Normal', 'Normal', ''),
 ('25042019588', '60', '160', '0.00234375', '90', '110', '+', '110', '90', '10', 'OD', 'Normal', '-', 'Aman', '-', 'Aman', 'Paringitis -', 'Tonsilitis -', 'Aman', 'Aman', '-', 'Aman', '-', 'Aman', '-', 'Aman', '-', '+', 'Aman', '+', 'Teraba', 'Aman', 'Teraba', 'Aman', '+', 'Aman', '+', '+', '-', 'Normal', 'Aman', 'Normal', 'Normal', 'Aman');
 
 -- --------------------------------------------------------
@@ -833,6 +831,7 @@ CREATE TABLE `siswa_baru4` (
 
 INSERT INTO `siswa_baru4` (`id`, `a1`, `a2`, `a3`, `a4`, `a5`, `b1`, `b2`, `b3`, `b4`, `c1`, `c2`, `c3`, `c4`, `c5`) VALUES
 ('20042019760', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'),
+('22062019928', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1'),
 ('25042019588', '1', '', '', '1', '', '', '1', '', '1', '', '', '1', '', '1');
 
 -- --------------------------------------------------------
@@ -855,16 +854,21 @@ CREATE TABLE `siswa_baru6` (
   `m` varchar(50) NOT NULL,
   `n` varchar(50) NOT NULL,
   `p` varchar(50) NOT NULL,
-  `q` varchar(50) NOT NULL
+  `q` varchar(50) NOT NULL,
+  `l` varchar(500) NOT NULL,
+  `b` varchar(500) NOT NULL,
+  `o` varchar(500) NOT NULL,
+  `gr` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `siswa_baru6`
 --
 
-INSERT INTO `siswa_baru6` (`id`, `agama`, `sholat`, `quran`, `sholat1`, `quran1`, `sholat2`, `quran2`, `sholat3`, `quran3`, `m`, `n`, `p`, `q`) VALUES
-('2004201944', 'Kristen', '', '', '1', '1', '', '', '', '', '10', '10', '10', '10'),
-('20042019760', 'Islam', '5', '5', '', '', '', '', '', '', '100', '100', '100', '100');
+INSERT INTO `siswa_baru6` (`id`, `agama`, `sholat`, `quran`, `sholat1`, `quran1`, `sholat2`, `quran2`, `sholat3`, `quran3`, `m`, `n`, `p`, `q`, `l`, `b`, `o`, `gr`) VALUES
+('2004201944', 'Kristen', '', '', '1', '1', '', '', '', '', '10', '10', '10', '10', '', '', '', ''),
+('20042019760', 'Islam', '5', '5', '', '', '', '', '', '', '100', '100', '100', '100', '', '', '', ''),
+('22062019928', 'Islam', '5', '1', '', '', '', '', '', '', '52', '42', '52', '54', '["1","5","9","7","3","3","7","3","5","9"]', '["2","6","0","6","2","4","6","2","6","8"]', '["3","7","9","5","1","5","5","3","7","7"]', '["4","8","8","4","2","6","4","4","8","6"]');
 
 -- --------------------------------------------------------
 
