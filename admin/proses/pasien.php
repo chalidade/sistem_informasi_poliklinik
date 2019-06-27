@@ -31,7 +31,13 @@ if ($id == "tambah") {
 $pasien = mysqli_query($connect, "INSERT INTO `pasien` (`id`, `rm`, `nama`, `nrp`, `ktp`, `tempat`, `tgl`, `usia`, `jk`, `kerja`, `detail`, `agama`, `alamat`, `tlp`, `status`, `bb`, `tb`, `goldar`, `rhesus`, `thn_masuk`, `smartcard`) VALUES (NULL, '$rm', '$nama', '$nrp', '$ktp', '$tempat', '$tgl', '$umur', '$jk', '$pekerjaan', '$detail', '$agama', '$alamat', '$hp', '$status', '$bb', '$tb', '$goldar', '$resus', '$thn_masuk', '$smartcard');");
 echo "<script>alert('Data Pasien di Simpan'); window.location = '../data-pasien.php';</script>";
 } else if ($id == "hapus") {
-  $delete = mysqli_query($connect, "DELETE FROM `pasien` WHERE `pasien`.`id` = '$data'");
+  $delete   = mysqli_query($connect, "DELETE FROM `pasien` WHERE `pasien`.`id` = '$data'");
+  $data     = mysqli_query($conenct, "SELECT * FROM `pasien` WHERE `id` = '$data'");
+  while ($a = mysqli_fetch_array($data)) {
+    $nrp    = $a['nrp'];
+  }
+  $kuratif  = mysqli_query($connect, "DELETE FROM `kuratif` WHERE `kuratif`.`pasien` = '$data'");
+  $promotif = mysqli_query($connect, "DELETE FROM `promotif` WHERE `promotif`.`nrp` = '$nrp'");
   echo "<script>alert('Data Berhasil di Dihapus'); window.location = '../data-pasien.php';</script>";
 } else if($id == "edit") {
   $update = mysqli_query($connect, "UPDATE `pasien` SET `rm` = '$rm', `nama` = '$nama', `nrp` = '$nrp', `ktp` = '$ktp', `tempat` = '$tempat', `tgl` = '$tgl', `usia` = '$umur', `jk` = '$jk', `kerja` = '$pekerjaan', `detail` = '$detail', `agama` = '$agama', `alamat` = '$alamat', `tlp` = '$hp', `status` = '$status', `bb` = '$bb', `tb` = '$tb', `goldar` = '$goldar', `rhesus` = '$resus', `thn_masuk` = '$thn_masuk', `smartcard` = '$smartcard' WHERE `pasien`.`id` = '$data';");

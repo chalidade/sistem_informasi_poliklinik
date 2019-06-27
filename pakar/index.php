@@ -143,6 +143,7 @@
 									<h6> Rekomendasi : <font style='text-transform:capitalize;'>".$_SESSION['rekom']."</font> </h6><br>";
 						?>
 						<p><a href="pakar.php?pa=ulangi">Ulangi Sistem Pakar</a></p>
+						<p><a href="../index.php">Kembali Login</a></p>
 					</div>
 				</div>
 			</div>

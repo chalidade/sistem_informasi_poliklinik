@@ -256,11 +256,11 @@ if ($id == 1) {
   echo "<script> window.location = '../data-mahasiswa-baru.php';</script>";
 } else if ($id == "delete") {
   $hapus1 = mysqli_query($connect, "DELETE FROM `siswa_baru` WHERE `siswa_baru`.`id` ='$no'");
-  $hapus2 = mysqli_query($connect, "DELETE FROM `siswa_baru1` WHERE `siswa_baru`.`id` ='$no'");
-  $hapus3 = mysqli_query($connect, "DELETE FROM `siswa_baru2` WHERE `siswa_baru`.`id` ='$no'");
-  $hapus4 = mysqli_query($connect, "DELETE FROM `siswa_baru3` WHERE `siswa_baru`.`id` ='$no'");
-  $hapus5 = mysqli_query($connect, "DELETE FROM `siswa_baru4` WHERE `siswa_baru`.`id` ='$no'");
-  $hapus6 = mysqli_query($connect, "DELETE FROM `siswa_baru6` WHERE `siswa_baru`.`id` ='$no'");
+  $hapus2 = mysqli_query($connect, "DELETE FROM `siswa_baru1` WHERE `siswa_baru1`.`id` ='$no'");
+  $hapus3 = mysqli_query($connect, "DELETE FROM `siswa_baru2` WHERE `siswa_baru2`.`id` ='$no'");
+  $hapus4 = mysqli_query($connect, "DELETE FROM `siswa_baru3` WHERE `siswa_baru3`.`id` ='$no'");
+  $hapus5 = mysqli_query($connect, "DELETE FROM `siswa_baru4` WHERE `siswa_baru4`.`id` ='$no'");
+  $hapus6 = mysqli_query($connect, "DELETE FROM `siswa_baru6` WHERE `siswa_baru6`.`id` ='$no'");
   echo "<script> window.location = '../data-mahasiswa-baru.php';</script>";
 }
 
