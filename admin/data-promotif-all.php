@@ -5,7 +5,8 @@
   <?php
   include "proses/koneksi.php";
   $nomor       = 1;
-  $data1        = $_REQUEST['data'];
+  $data1       = $_REQUEST['data'];
+  $pas         = $_REQUEST['data'];
   $pasien      = mysqli_query($connect, "SELECT * FROM `pasien` WHERE `id` = '$data1'");
   while ($data = mysqli_fetch_row($pasien)) {
         $nrp   = $data[3];
@@ -63,7 +64,7 @@
                   <!-- <td><?php echo $data1[2]; ?></td> -->
                   <td>
                   <a href="detail-promotif.php?data=<?php echo $data[0]; ?>&id=<?php echo $data1[0]; ?>"><button type="button" name="button" style="width:100px;" class="btn btn-success">Detail</button></a>
-                  <a onclick="return confirm('Are you sure you want to delete?')" href="proses/promotif.php?data=<?php echo $data[0]; ?>&id=hapus"><button type="button" name="button" style="width:100px;" class="btn btn-danger">Delete</button></a>
+                  <a onclick="return confirm('Are you sure you want to delete?')" href="proses/promotif.php?pasien=<?php echo $pas; ?>&data=<?php echo $data1[0]; ?>&idx=hapus"><button type="button" name="button" style="width:100px;" class="btn btn-danger">Delete</button></a>
                   </td>
               </tr>
             <?php }} ?>

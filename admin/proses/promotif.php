@@ -1,8 +1,33 @@
 <?php
 error_reporting(0);
 include "koneksi.php";
-
-// Tambahkan Delete Promotif
+$idx            = $_REQUEST['idx'];
+if ($idx == "hapussemua") {
+  $data      = $_REQUEST['data'];
+  $pasyen    = mysqli_query($connect, "SELECT * FROM `promotif` WHERE `nrp` = '$data'");
+  while ($a  = mysqli_fetch_row($pasyen) ) {
+    $id_prom = $a[0];
+    $promotif2 = mysqli_query($connect, "DELETE FROM `promotif_hiper` WHERE `promotif_hiper`.`id_promotif` = '$id_prom'");
+    $promotif3 = mysqli_query($connect, "DELETE FROM `promotif_jantung` WHERE `promotif_jantung`.`id` = '$id_prom'");
+    $promotif4 = mysqli_query($connect, "DELETE FROM `promotif_kulit` WHERE `promotif_kulit`.`id` = '$id_prom'");
+    $promotif5 = mysqli_query($connect, "DELETE FROM `promotif_mata` WHERE `promotif_mata`.`id` = '$id_prom'");
+    $promotif6 = mysqli_query($connect, "DELETE FROM `promotif_mulut` WHERE `promotif_mulut`.`id` = '$id_prom'");
+    $promotif7 = mysqli_query($connect, "DELETE FROM `promotif_telinga` WHERE `promotif_telinga`.`id` = '$id_prom'");
+  }
+  $hapusemua = mysqli_query($connect, "DELETE FROM `promotif` WHERE `promotif`.`nrp` = '$data'");
+  echo "<script>window.location = '../data-promotif.php';</script>";
+} else if($idx == "hapus") {
+  $data      = $_REQUEST['data'];
+  $pasien    = $_REQUEST['pasien'];
+  $promotif1 = mysqli_query($connect, "DELETE FROM `promotif` WHERE `promotif`.`id` = '$data'");
+  $promotif2 = mysqli_query($connect, "DELETE FROM `promotif_hiper` WHERE `promotif_hiper`.`id_promotif` = '$data'");
+  $promotif3 = mysqli_query($connect, "DELETE FROM `promotif_jantung` WHERE `promotif_jantung`.`id` = '$data'");
+  $promotif4 = mysqli_query($connect, "DELETE FROM `promotif_kulit` WHERE `promotif_kulit`.`id` = '$data'");
+  $promotif5 = mysqli_query($connect, "DELETE FROM `promotif_mata` WHERE `promotif_mata`.`id` = '$data'");
+  $promotif6 = mysqli_query($connect, "DELETE FROM `promotif_mulut` WHERE `promotif_mulut`.`id` = '$data'");
+  $promotif7 = mysqli_query($connect, "DELETE FROM `promotif_telinga` WHERE `promotif_telinga`.`id` = '$data'");
+  echo "<script>window.location = '../data-promotif-all.php?data=$pasien';</script>";
+} else {
 $id             = rand(10,10000).date('dmy');
 $tanggal        = date('d/m/Y');
 $data           = $_POST['nrp'];
@@ -148,10 +173,6 @@ $kesimpulan         = $_POST['kesimpulan'];
 // echo "6. $lepra - $tato - $penyakit_kulit - $keterangan_kulit - $catatan - $kesimpulan";
 $promotif_kulit     = mysqli_query($connect, "INSERT INTO `promotif_kulit` (`id`, `lepra`, `tato`, `borok`, `penyakit_kulit`, `ket_kulit`, `catatan`, `kesimpulan`) VALUES ('$id', '$lepra', '$tato', '$borok', '$penyakit_kulit', '$keterangan_kulit', '$catatan', '$kesimpulan');");
 $riwayat            = mysqli_query($connect, "INSERT INTO `riwayat` (`id`, `nama`, `jenis_periksa`, `tanggal`) VALUES (NULL, '$nama', 'Promotif dan Presentif', '$tgl_riwayat');");
+echo "<script>window.location = '../data-promotif.php';</script>";
+}
 ?>
-<script>
-setTimeout(function(){
-alert('Data Presentiv Berhasil Ditambahkan'); window.location = '../data-pasien.php';
-}, 5000);
-
-</script>

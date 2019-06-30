@@ -56,7 +56,7 @@
                   <td><?php echo $data[20]; ?></td>
                   <td>
                   <a href="data-promotif-all.php?data=<?php echo $data[0]; ?>"><button type="button" name="button" style="width:100px;" class="btn btn-success">Detail</button></a>
-                  <a onclick="return confirm('Are you sure you want to delete?')" href="proses/pasien.php?data=<?php echo $data[0]; ?>&id=hapus"><button type="button" name="button" style="width:100px;" class="btn btn-danger">Delete</button></a>
+                  <a onclick="return confirm('Are you sure you want to delete?')" href="proses/promotif.php?data=<?php echo $data[3]; ?>&idx=hapussemua"><button type="button" name="button" style="width:100px;" class="btn btn-danger">Delete</button></a>
                   </td>
               </tr>
             <?php } ?>
