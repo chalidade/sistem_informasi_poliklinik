@@ -33,10 +33,12 @@
             <table class="table table-hover">
               <tr>
                 <!-- <th>No</th> -->
-                <th>kode</th>
+                <th>No</th>
                 <th>Nama</th>
                 <th>Jenis</th>
                 <th>Stok</th>
+                <th>Tgl Produksi</th>
+                <th>Tgl Expired</th>
                 <!-- <th style="width:45%">Option</th> -->
               </tr>
                   <?php
@@ -65,6 +67,8 @@
                   </td>
                   <td><input type="text" class="form-control" name="jenis" value="<?php echo $data[3]; ?>"></td>
                   <td><input type="text" class="form-control" name="stok" value="<?php echo $data[4]; ?>"></td>
+                  <td><input type="date" style="line-height: 20px;" class="form-control" name="stok" value="<?php echo $data[5]; ?>"></td>
+                  <td><input type="date" style="line-height: 20px;" class="form-control" name="stok" value="<?php echo $data[6]; ?>"></td>
                   <td>
                     <button type="submit" class="btn btn-warning">Edit</button>
                     <a class="btn btn-danger" href="proses/obat.php?id=hapus&data=<?php echo $data[0]; ?>" onclick="return confirm('Are you sure you want to delete?')">Delete</a>

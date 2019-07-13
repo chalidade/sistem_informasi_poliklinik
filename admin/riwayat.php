@@ -17,7 +17,7 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title">Data Riwayat Pemeriksaan Harian</h3>
-            | <a target="_blank" href="export_excel.php">Export Excel</a>
+            | <a target="_blank" href="export_excel.php?id=periksa">Export Excel</a>
             <div class="box-tools">
               <div class="input-group input-group-sm" style="width: 150px;">
                 <form class="" action="riwayat.php" method="GET">

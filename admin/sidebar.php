@@ -73,6 +73,8 @@
         <ul class="treeview-menu">
           <li><a href="obat.php"><i class="fa fa-circle-o"></i> <span>Input Obat</span></a></li>
           <li><a href="data-obat.php"><i class="fa fa-circle-o"></i> Data Obat</a></li>
+          <li><a href="riwayat-obat.php"><i class="fa fa-circle-o"></i> <span>Riwayat Obat Masuk</span></a></li>
+          <li><a href="riwayat-obat.php"><i class="fa fa-circle-o"></i> <span>Riwayat Obat Keluar</span></a></li>
         </ul>
       </li>
       <li><a href="riwayat.php"><i class="fa fa-folder"></i> <span>Riwayat Pemeriksaan</span></a></li>

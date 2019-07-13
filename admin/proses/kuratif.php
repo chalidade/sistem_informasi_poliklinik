@@ -28,9 +28,20 @@ if ($id == 'delobat') {
   $kode_obat  = $_POST['kode'];
   $total      = $_POST['total'];
   $aturan     = $_POST['aturan'];
+  $nama       = $_POST['nama'];
+  $tanggal    = date('d/M/Y h:i:sa');
   for ($i=0; $i < count($kode_obat); $i++) {
-    // echo $kode_obat[$i]." ".$total[$i]." ".$aturan[$i]."<br>";
-    $insert = mysqli_query($connect, "INSERT INTO `data_obat` (`id`, `order_id`, `kode`, `jumlah`, `minum`) VALUES (NULL, '$id_kuratif', '$kode_obat[$i]', '$total[$i]', '$aturan[$i]');");
+    // echo $kode_obat[$i]." ".$total[$i]." ".$aturan[$i]." ".$nama[$i]." ".$tanggal."<br>";
+    $insert      = mysqli_query($connect, "INSERT INTO `data_obat` (`id`, `order_id`, `kode`, `jumlah`, `minum`) VALUES (NULL, '$id_kuratif', '$kode_obat[$i]', '$total[$i]', '$aturan[$i]');");
+    $a           = mysqli_query($connect, "SELECT * FROM `obat` WHERE `id` = '$kode_obat[$i]'");
+    while ($obat = mysqli_fetch_array($a)) {
+      $stok      = $obat['stok'];
+      $sisa      = $stok-$total[$i];
+
+    $b           = mysqli_query($connect, "UPDATE `obat` SET `stok` = '$sisa' WHERE `obat`.`id` = '$kode_obat[$i]';");
+    }
+
+    $ubah = mysqli_query($connect, "INSERT INTO `riwayat_obat.php` (`no`, `nama`, `keterangan`, `tanggal`) VALUES (NULL, '$nama[$i]', '$total[$i] butir obat keluar untuk pemeriksaan kuratif $id_kuratif', '$tanggal');");
   }
 
   // echo "$keluhan_utama | $tanggal_keluhan | $history_penyakit | $pemeriksaan_lab | $pemeriksaan_radio | $diagnosis | $hiper | $koles";
@@ -66,6 +77,6 @@ $id_kuratif = $_SESSION['kuratif'];
 // echo $_SESSION['kode_pasien']." - ".$_SESSION['keluhan_utama']." - ".$_SESSION['keluhan_tanggal']." - ".$_SESSION['history_penyakit']." - ".$_SESSION['pemeriksaan_fisik']." - ".$_SESSION['pemeriksaan_lab']." - ".$_SESSION['radiologi']." - ".$_SESSION['diagnosis']." - ".$_SESSION['kolesterol']." ".$_SESSION['hipertensi']." - ".$_SESSION['nama']." - ".$_SESSION['kerja']." - ".$_SESSION['tgl_riwayat'];
 $input  = mysqli_query($connect, "INSERT INTO `kuratif` (`order_id`, `pasien`, `kel_utama`, `tgl_periksa`, `riwayat_penyakit`, `fisik`, `lab`, `radio`, `diagnosis`) VALUES ('$id_kuratif', '$pasien', '$kel_utama', '$kel_tgl', '$his_sakit', '$fisik', '$lab', '$radiologi','$diagnosis');");
 $riwayat= mysqli_query($connect, "INSERT INTO `riwayat` (`id`, `nama`, `jenis_periksa`, `tanggal`) VALUES (NULL, '$nama', 'Kuratif', '$tgl_riwayat');");
-echo "<script> window.location = '../cari-obat.php';</script>";
+echo "<script> alert('Sukses Terupload');window.location = '../cari-obat.php';</script>";
 }
  ?>

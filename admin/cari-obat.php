@@ -102,7 +102,9 @@ $no = $_REQUEST['no'];
                   <?php echo $kode; ?>
                   <input type="hidden" name="kode[]" value="<?php echo $kode; ?>">
                 </td>
-                <td><?php echo $nama; ?></td>
+                <td>
+                <?php echo $nama; ?>
+                <input type="hidden" name="nama[]" value="<?php echo $nama; ?>"></td>
                 <td><?php echo $jenis; ?></td>
                 <td><input type="text" name="total[]" class="form-control" required></td>
                 <td>

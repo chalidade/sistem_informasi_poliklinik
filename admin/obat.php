@@ -79,6 +79,16 @@ $no = $_REQUEST['no'];
               <input type="text" name="stok" class="form-control" required style="line-height:15px" placeholder="Butir">
             </div>
 
+            <div class="form-group">
+              <label>Tanggal Produksi</i></label>
+              <input type="date" name="produksi" class="form-control" required style="line-height:15px">
+            </div>
+
+            <div class="form-group">
+              <label>Tanggal Expired</i></label>
+              <input type="date" name="expired" class="form-control" required style="line-height:15px" placeholder="Butir">
+            </div>
+
           <div class="form-group" style="margin-top:20px">
             <input type="submit" class="btn btn-primary add-one" value="Simpan">
           </div>
