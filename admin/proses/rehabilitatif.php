@@ -12,7 +12,7 @@ $nama               = $_REQUEST['nama'];
 $tgl_riwayat        = date("d-m-Y h:i:sa");
 if($id == 'tambah') {
 $insert             = mysqli_query($connect, "INSERT INTO `rehabilitatif` (`id`, `tangal`, `diagnosa_akhir`, `saran`, `kemajuan`, `kuratif`) VALUES (NULL, '$tgl_rehab', '$diagnosa_akhir', '$saran', '$kemajuan', '$data');");
-$riwayat= mysqli_query($connect, "INSERT INTO `riwayat` (`id`, `nama`, `jenis_periksa`, `tanggal`) VALUES (NULL, '$nama', 'Rehabilitatif', '$tgl_riwayat');");
+$riwayat= mysqli_query($connect, "INSERT INTO `riwayat` (`id`, `nama`, `jenis_periksa`, `tanggal`, `diagnosis`) VALUES (NULL, '$nama', 'Rehabilitatif', '$tgl_riwayat', '');");
 echo "<script>alert('Data Rehabilitatif Disimpan'); window.location = '../data-rehabilitasi.php?data=$pasien&id=$data';</script>";
 } else if($id == 'hapus') {
   $rehab   = $_REQUEST['rehab'];

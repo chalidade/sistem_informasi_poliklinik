@@ -42,6 +42,7 @@
             <table class="table table-hover">
               <tr>
                 <th>No</th>
+                <th>No RM</th>
                 <th>Nama</th>
                 <th>Jabatan</th>
                 <th>Jenis Periksa</th>
@@ -66,14 +67,11 @@
                     ?>
                 <tr>
                   <td><?php echo $nomor; $nomor++; ?></td>
+                  <td><?php echo $data[5]; ?></td>
                   <td><?php echo $data[1]; ?></td>
                   <td> <?php echo $data1[9]." ".$data1[10]; ?></td>
                   <td><?php echo $data[2]; ?></td>
-                  <td>
-                    <?php if($data[2] == 'Kuratif') { ?>
-                      <?php $a = mysqli_query($connect, "") ?>
-                    <?php } ?>
-                  </td>
+                  <td><?php echo $data[4] ?></td>
                   <td><?php echo $data[3]; ?></td>
                   <td>
                     <!-- <?php if($data[2] == 'Kuratif') { ?>

@@ -76,7 +76,7 @@ $_SESSION['kuratif']  = date('dmY').rand(10, 1000);
 $id_kuratif = $_SESSION['kuratif'];
 // echo $_SESSION['kode_pasien']." - ".$_SESSION['keluhan_utama']." - ".$_SESSION['keluhan_tanggal']." - ".$_SESSION['history_penyakit']." - ".$_SESSION['pemeriksaan_fisik']." - ".$_SESSION['pemeriksaan_lab']." - ".$_SESSION['radiologi']." - ".$_SESSION['diagnosis']." - ".$_SESSION['kolesterol']." ".$_SESSION['hipertensi']." - ".$_SESSION['nama']." - ".$_SESSION['kerja']." - ".$_SESSION['tgl_riwayat'];
 $input  = mysqli_query($connect, "INSERT INTO `kuratif` (`order_id`, `pasien`, `kel_utama`, `tgl_periksa`, `riwayat_penyakit`, `fisik`, `lab`, `radio`, `diagnosis`) VALUES ('$id_kuratif', '$pasien', '$kel_utama', '$kel_tgl', '$his_sakit', '$fisik', '$lab', '$radiologi','$diagnosis');");
-$riwayat= mysqli_query($connect, "INSERT INTO `riwayat` (`id`, `nama`, `jenis_periksa`, `tanggal`) VALUES (NULL, '$nama', 'Kuratif', '$tgl_riwayat');");
+$riwayat= mysqli_query($connect, "INSERT INTO `riwayat` (`id`, `nama`, `jenis_periksa`, `tanggal`, `diagnosis`) VALUES (NULL, '$nama', 'Kuratif', '$tgl_riwayat', '$diagnosis');");
 echo "<script> alert('Sukses Terupload');window.location = '../cari-obat.php';</script>";
 }
  ?>

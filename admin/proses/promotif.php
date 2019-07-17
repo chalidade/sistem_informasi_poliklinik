@@ -172,7 +172,7 @@ $catatan            = $_POST['catatan'];
 $kesimpulan         = $_POST['kesimpulan'];
 // echo "6. $lepra - $tato - $penyakit_kulit - $keterangan_kulit - $catatan - $kesimpulan";
 $promotif_kulit     = mysqli_query($connect, "INSERT INTO `promotif_kulit` (`id`, `lepra`, `tato`, `borok`, `penyakit_kulit`, `ket_kulit`, `catatan`, `kesimpulan`) VALUES ('$id', '$lepra', '$tato', '$borok', '$penyakit_kulit', '$keterangan_kulit', '$catatan', '$kesimpulan');");
-$riwayat            = mysqli_query($connect, "INSERT INTO `riwayat` (`id`, `nama`, `jenis_periksa`, `tanggal`) VALUES (NULL, '$nama', 'Promotif dan Presentif', '$tgl_riwayat');");
+$riwayat            = mysqli_query($connect, "INSERT INTO `riwayat` (`id`, `nama`, `jenis_periksa`, `tanggal`, `diagnosis`) VALUES (NULL, '$nama', 'Promotif dan Presentif', '$tgl_riwayat', '');");
 echo "<script>window.location = '../data-promotif.php';</script>";
 }
 ?>
