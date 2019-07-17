@@ -82,6 +82,7 @@ $no = $_REQUEST['no'];
           $tb        = $data[16];
           $goldar    = $data[17];
           $rhesus    = $data[18];
+          $alergi    = $data[21];
 
           ?>
           <!-- text input -->
@@ -146,8 +147,14 @@ $no = $_REQUEST['no'];
               <div style="margin-top:5px;" class="col-md-2">
                 <b>Golongan Darah</b>
               </div>
-              <div style="margin-top:5px;" class="col-md-2">
+              <div style="margin-top:5px;" class="col-md-1">
                 <?php echo "$goldar"."$rhesus";?>
+              </div>
+              <div style="margin-top:5px;" class="col-md-2">
+                <b>Alergi</b>
+              </div>
+              <div style="margin-top:5px;" class="col-md-2">
+                <?php echo "$alergi";?>
               </div>
             </div>
             <hr>

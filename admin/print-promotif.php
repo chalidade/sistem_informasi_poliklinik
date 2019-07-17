@@ -57,6 +57,7 @@ include "proses/koneksi.php";
             $tb        = $data[16];
             $goldar    = $data[17];
             $rhesus    = $data[18];
+            $alergi    = $data[21];
             $promotif    = mysqli_query($connect, "SELECT * FROM `promotif` WHERE `id` = '$id' ");
             while ($tif  = mysqli_fetch_row($promotif)) {
 
@@ -102,7 +103,11 @@ include "proses/koneksi.php";
                 </tr>
                 <tr>
                   <td><b>Alamat</b></td>
-                  <td colspan="4"><?php echo $alamat; ?></td>
+                  <td colspan="2"><?php echo $alamat; ?></td>
+                </tr>
+                <tr>
+                  <td><b>Alergi</b></td>
+                  <td><?php echo $alergi; ?></td>
                 </tr>
               </table>
 

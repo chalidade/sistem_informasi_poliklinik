@@ -59,9 +59,16 @@ $no = $_REQUEST['no'];
       <div class="box-body" style="padding:20px;">
           <!-- text input -->
           <form action="proses/pasien.php?id=tambah" method="post" enctype="multipart/form-data">
+            <?php
+            $a           = mysqli_query($connect, "SELECT * FROM `pasien` ORDER BY `id` DESC ");
+            while ($data = mysqli_fetch_array($a)) {
+            $no          = $data['id']+1;
+            }
+              ?>
           <div class="form-group">
             <label>NOMOR RM</label>
-            <input type="text" name="no"  class="form-control"  required>
+            <input type="text" class="form-control" value="<?php echo $no; ?>" disabled>
+            <input type="hidden" name="no"  class="form-control" value="<?php echo $no; ?>" disabled>
           </div>
 
           <!-- Tambahan -->
@@ -161,13 +168,21 @@ $no = $_REQUEST['no'];
                     <option value="PL">PL</option>
                   </select>
                 </td>
+                <td> &nbsp;</td>
+                <td><input type="radio" name="pekerjaan" value="Umum"></td>
+                <td>Umum</td>
               </tr>
             </table>
           </div>
 
           <div class="form-group">
             <label>AGAMA</label>
-            <input type="text" name="agama"  class="form-control" required>
+            <select class="form-control" name="agama">
+              <option value="Islam">Islam</option>
+              <option value="Kristen">Kristen</option>
+              <option value="Hindu">Hindu</option>
+              <option value="Budha">Budha</option>
+            </select>
           </div>
 
           <div class="form-group">
@@ -229,6 +244,10 @@ $no = $_REQUEST['no'];
                 </td>
               </tr>
             </table>
+          </div>
+          <div class="form-group">
+            <label>Alergi</label>
+            <input type="text" name="alergi"  class="form-control"  required>
           </div>
 
           <div class="form-group" style="margin-top:20px">

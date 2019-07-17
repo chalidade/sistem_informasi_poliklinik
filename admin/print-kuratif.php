@@ -51,6 +51,7 @@
               $tb        = $data[16];
               $goldar    = $data[17];
               $rhesus    = $data[18];
+              $alergi    = $data[21];
              ?>
               <!-- text input -->
               <?php
@@ -89,6 +90,10 @@
                    <tr>
                      <td><b>Golongan Darah</b></td>
                      <td><?php echo "$goldar"."$rhesus"; ?></td>
+                   </tr>
+                   <tr>
+                     <td><b>Alergi</b></td>
+                     <td><?php echo "$alergi"; ?></td>
                    </tr>
                  </table>
 

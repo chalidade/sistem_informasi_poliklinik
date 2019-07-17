@@ -23,16 +23,17 @@ $bb         = $_POST['bb'];
 $tb         = $_POST['tb'];
 $goldar     = $_POST['goldar'];
 $resus      = $_POST['resus'];
+$alergi     = $_POST['alergi'];
 $thn_masuk  = $_POST['thn_masuk'];
 
 // echo "$rm | $nama | $nrp | $ktp | $tempat | $tgl | $usia | $jk | $pekerjaan | $detail | $agama | $alamat | $hp | $status | $bb | $tb | $goldar | $resus";
 
 if ($id == "tambah") {
-$pasien = mysqli_query($connect, "INSERT INTO `pasien` (`id`, `rm`, `nama`, `nrp`, `ktp`, `tempat`, `tgl`, `usia`, `jk`, `kerja`, `detail`, `agama`, `alamat`, `tlp`, `status`, `bb`, `tb`, `goldar`, `rhesus`, `thn_masuk`, `smartcard`) VALUES (NULL, '$rm', '$nama', '$nrp', '$ktp', '$tempat', '$tgl', '$umur', '$jk', '$pekerjaan', '$detail', '$agama', '$alamat', '$hp', '$status', '$bb', '$tb', '$goldar', '$resus', '$thn_masuk', '$smartcard');");
+$pasien = mysqli_query($connect, "INSERT INTO `pasien` (`id`, `rm`, `nama`, `nrp`, `ktp`, `tempat`, `tgl`, `usia`, `jk`, `kerja`, `detail`, `agama`, `alamat`, `tlp`, `status`, `bb`, `tb`, `goldar`, `rhesus`, `thn_masuk`, `smartcard`, `alergi`) VALUES (NULL, '$rm', '$nama', '$nrp', '$ktp', '$tempat', '$tgl', '$umur', '$jk', '$pekerjaan', '$detail', '$agama', '$alamat', '$hp', '$status', '$bb', '$tb', '$goldar', '$resus', '$thn_masuk', '$smartcard', '$alergi');");
 echo "<script>alert('Data Pasien di Simpan'); window.location = '../data-pasien.php';</script>";
 } else if ($id == "hapus") {
   $delete   = mysqli_query($connect, "DELETE FROM `pasien` WHERE `pasien`.`id` = '$data'");
-  $data     = mysqli_query($conenct, "SELECT * FROM `pasien` WHERE `id` = '$data'");
+  $data     = mysqli_query($connect, "SELECT * FROM `pasien` WHERE `id` = '$data'");
   while ($a = mysqli_fetch_array($data)) {
     $nrp    = $a['nrp'];
   }

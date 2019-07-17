@@ -45,6 +45,7 @@
                 <th>Nama</th>
                 <th>Jabatan</th>
                 <th>Jenis Periksa</th>
+                <th>Diagnosa</th>
                 <th>Tanggal</th>
                 <!-- <th style="width:45%">Option</th> -->
               </tr>
@@ -68,6 +69,11 @@
                   <td><?php echo $data[1]; ?></td>
                   <td> <?php echo $data1[9]." ".$data1[10]; ?></td>
                   <td><?php echo $data[2]; ?></td>
+                  <td>
+                    <?php if($data[2] == 'Kuratif') { ?>
+                      <?php $a = mysqli_query($connect, "") ?>
+                    <?php } ?>
+                  </td>
                   <td><?php echo $data[3]; ?></td>
                   <td>
                     <!-- <?php if($data[2] == 'Kuratif') { ?>

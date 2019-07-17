@@ -59,9 +59,16 @@ $no = $_REQUEST['no'];
       <div class="box-body" style="padding:20px;">
           <!-- text input -->
           <form action="proses/obat.php?id=tambah" method="post" enctype="multipart/form-data">
+            <?php
+            $a           = mysqli_query($connect, "SELECT * FROM `obat` ORDER BY `id` DESC ");
+            while ($data = mysqli_fetch_array($a)) {
+            $no          = $data['id']+1;
+            }
+              ?>
             <div class="form-group">
               <label>Kode Obat</label>
-              <input type="text" name="kode" class="form-control" required style="line-height:15px" placeholder="Kode Obat">
+              <input type="text" class="form-control" value="<?php echo $no; ?>" style="line-height:15px" disabled>
+              <input type="hidden" name="kode" class="form-control" value="<?php echo $no; ?>" required style="line-height:15px" placeholder="Kode Obat">
             </div>
 
             <div class="form-group">

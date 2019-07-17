@@ -85,6 +85,7 @@ $no = $_REQUEST['no'];
           $tb        = $data[16];
           $goldar    = $data[17];
           $rhesus    = $data[18];
+          $alergi    = $data[21];
           $promotif    = mysqli_query($connect, "SELECT * FROM `promotif` WHERE `id` = '$id' ");
           while ($tif  = mysqli_fetch_row($promotif)) {
 
@@ -105,6 +106,7 @@ $no = $_REQUEST['no'];
 
           $tif_hiper    = mysqli_query($connect, "SELECT * FROM `promotif_hiper` WHERE `id_promotif` = '$id' ");
           while ($hiper  = mysqli_fetch_row($tif_hiper)) {
+            echo "tes";
           ?>
           <!-- text input -->
             <input type="hidden" name="nrp" value="<?php echo $nrp; ?>">
@@ -151,8 +153,14 @@ $no = $_REQUEST['no'];
               <div style="margin-top:5px;" class="col-md-2">
                 <b>Alamat</b>
               </div>
-              <div style="margin-top:5px;" class="col-md-10">
+              <div style="margin-top:5px;" class="col-md-5">
                 <?php echo $alamat; ?>
+              </div>
+              <div style="margin-top:5px;" class="col-md-2">
+                <b>Alergi</b>
+              </div>
+              <div style="margin-top:5px;" class="col-md-2">
+                <?php echo $alergi; ?>
               </div>
               <div style="margin-top:5px;" class="col-md-12">
                 <b>Keadaan Umum</b>
